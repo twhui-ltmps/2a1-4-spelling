@@ -328,7 +328,7 @@
                 btn.disabled = true;
                 
                 const docId = `${data.googleId}_timed_${data.chapter}`;
-                const docRef = doc(db, "2627p5a1_spelling_monster", docId);
+                const docRef = doc(db, "2627p2a1_spelling_monster", docId);
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists() && data.score <= docSnap.data().score) {
@@ -369,7 +369,7 @@
             }
 
             try {
-                const q = query(collection(db, "2627p5a1_spelling_monster"), ...conds, orderBy("score", "desc"), limit(25));
+                const q = query(collection(db, "2627p2a1_spelling_monster"), ...conds, orderBy("score", "desc"), limit(25));
                 const snap = await getDocs(q);
                 tbody.innerHTML = snap.empty ? "<tr><td colspan='5' class='p-3 text-center text-gray-400 text-xs'>No scores logged yet!</td></tr>" : "";
                 
